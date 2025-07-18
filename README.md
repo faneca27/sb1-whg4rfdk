@@ -184,12 +184,6 @@ MIT License - see [LICENSE](LICENSE) file for details.
 - **Tailwind CSS**: For the utility-first CSS framework
 - **Lucide Icons**: For the beautiful icon set
 
-## 📞 Support
-
-- **Documentation**: [Link to docs]
-- **Issues**: [GitHub Issues]
-- **Discussions**: [GitHub Discussions]
-- **Email**: support@python-neural-interface.com
 
 ---
 
