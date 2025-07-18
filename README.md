@@ -1,6 +1,6 @@
 # Python Neural Interface 🚀
 
-A revolutionary visual programming environment that makes Python accessible to everyone through drag-and-drop blocks. Perfect for education, rapid prototyping, and learning programming concepts.
+A revolutionary visual programming environment that makes Python accessible to everyone through drag-and-drop blocks. Perfect for education, rapid prototyping, and learning programming concepts.(Not ready yet, any suggestion is appreciated)
 
 ![Python Neural Interface](https://via.placeholder.com/800x400/0a0a0a/00ffff?text=Python+Neural+Interface)
 
