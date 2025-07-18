@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(rgba(0, 255, 255, 0.2) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 255, 0.2) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .neon-glow {
+    box-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor,
+      0 0 20px currentColor;
+  }
+  
+  .neon-text {
+    text-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor;
+  }
+  
+  .cyber-border {
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #00ffff) 1;
+    position: relative;
+  }
+  
+  .cyber-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #00ffff);
+    border-radius: inherit;
+    z-index: -1;
+    animation: borderRotate 3s linear infinite;
+  }
+  
+  @keyframes borderRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .hologram {
+    background: linear-gradient(45deg, 
+      rgba(0, 255, 255, 0.1) 0%,
+      rgba(255, 0, 255, 0.1) 50%,
+      rgba(255, 255, 0, 0.1) 100%
+    );
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+  }
+  
+  .scan-lines {
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 255, 255, 0.03) 2px,
+        rgba(0, 255, 255, 0.03) 4px
+      );
+  }
+  
+  .matrix-bg {
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, rgba(255, 255, 0, 0.1) 0%, transparent 50%),
+      linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+  border: 1px solid #00ffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #00ffff, #ff00ff);
+  border-radius: 6px;
+  border: 1px solid #00ffff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #ff00ff, #ffff00);
+  box-shadow: 0 0 10px #00ffff;
+}
+
+/* Glitch effect */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.glitch:hover {
+  animation: glitch 0.3s ease-in-out;
+}
+
+/* Pulse animation */
+@keyframes pulse-neon {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.pulse-neon {
+  animation: pulse-neon 2s ease-in-out infinite;
+}
+
+/* Theme CSS Variables */
+:root {
+  --color-primary: #00ffff;
+  --color-secondary: #ff00ff;
+  --color-accent: #ffff00;
+  --color-background: #0a0a0a;
+  --color-surface: #1a1a2e;
+  --color-text: #00ffff;
+  --color-text-secondary: #a855f7;
+}
+
+/* Mobile touch improvements */
+.mobile-touch {
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+}
+
+.mobile-block {
+  touch-action: none;
+}
+
+.mobile-canvas {
+  touch-action: pan-x pan-y;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .glitch:hover,
+  .pulse-neon,
+  .animate-pulse {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .neon-glow {
+    box-shadow: 0 0 0 2px currentColor;
+  }
+  
+  .neon-text {
+    text-shadow: none;
+    font-weight: bold;
+  }
+}
